@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <header>
+        <h2>TODO APP</h2>
+        <hr>
+    </header>
+    <main>
+        <!-- Description -->
+        <section id="description">
+            <div class="description">
+                <h3>Description</h3>
+            <!-- Form -->
+            <form action="/create-todo" method="POST">
+                <textarea name="description" id="description_textarea" cols="35" rows="5" placeholder="Enter Description"></textarea>
+                <hr>
+                <!-- Category & Duedate -->
+                <section id="category-duedate"> 
+                    <div class="category-duedate">
+                        <div class="category">
+                            <h4>
+                                Category
+                                <i class="fas fa-caret-down"></i>
+                            </h4>
+                            <!-- DropDown -->
+                            <div class="category-dropdown">
+                                    <select name="Category">
+                                        <option value="Work">Work</option>
+                                        <option value="Cinema">Cinema</option>
+                                        <option value="Market">Market</option>
+                                        <option value="Travel">Travel</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <!-- Duedate -->
+                        <div class="duedate">
+                            <h4>Due Date</h4>
+                                <input type="date" name="todoDate">
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <!-- Add & Delete Tasks -->
+                <section id="add-delete-tasks">
+                    <div class="add-delete-tasks">
+                        <div class="add-task">
+                            <h4 id="add-task">
+                                <button type="submit" id="add-task"><i class="fas fa-plus"></i>
+                                    Add Task </button>
+                            </h4>
+                        </div>
+                        <div class="delete-task">
+                            <h4 id="delete-task">
+                                 <button formaction="/delete-task" id="delete-task">
+                                    <i class="fas fa-trash"></i>
+                                    Delete Task
+                                </button>
+                            </h4>  
+                        </div>
+                    </div> 
+                <hr>    
+                </section>
+                <!-- Output -->
+                <section id="tasks">
+                    <ul>
+                        <% for(const i of fetched) { %>
+                            <li id="fetched-data">
+                                <!-- Check-Box & Task to be Deleted-->
+                                <input type="checkbox"  name="delete_task" value= "<%= i._id %>" id="checkbox">
+                                <p id="i-description-date">
+                                    <!-- Description to print -->
+                                    <%= i.description %>
+                                    <br>
+                                    <!-- Selected Date to print -->
+                                    <%= i.todoDate %>
+                                </p>
+                                <div class="i-Category">
+                                        <p id="i-Category">
+                                            <!-- Selected Category to print -->
+                                            <%= i.Category %>
+                                        </p>
+                                 </div>
+                                 
+                            </li>
+                        <% } %>
+                    </ul>  
+                </section>
+            </form>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>

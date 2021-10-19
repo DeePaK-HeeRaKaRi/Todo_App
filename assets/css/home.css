@@ -1,0 +1,103 @@
+body{
+    background-color: aquamarine;
+    width: 60%;
+    height: auto;
+    margin: 0px 20% 0px 20% ;
+    border: 1px solid white;
+}
+
+header h2{
+    text-align: center;
+    color:rgb(16, 98, 250);
+}
+/* Description */
+#description_textarea{
+    border: 0px;
+    margin: 0px 0px 0px 20px;
+}
+/* Category & Due-Date */
+.category-duedate{
+    display: flex;
+
+}
+
+.category,.duedate{
+    margin: 0px 0px 0px 6%;
+    width: 50%;
+    height:5rem;
+}
+
+.category-dropdown li{
+    list-style: none;
+    margin: 0px 0px 0.7rem 0px;
+}
+.duedate:hover,.category:hover{
+    color: rgb(35, 110, 145);
+}
+.category:hover .category-dropdown{
+    color: red;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.category-dropdown:hover option{
+    background-color: thistle;
+}
+
+
+/* Adding & Deleting Tasks */
+.add-delete-tasks{
+    display: flex;
+}
+.add-task button{
+    background-color:inherit;
+    border: 0px;
+    cursor: pointer;
+}
+#add-task,#delete-task{
+    height:1.4rem;
+    width: auto;
+    background-color: rgba(236, 130, 236, 0.603);
+    padding: auto;
+    font-family: serif;
+    color:black;
+}
+#delete-task{
+    border: none;
+}
+#add-task:hover,#delete-task:hover{
+    background-color: rgb(72, 202, 224);
+    position: relative;
+} 
+.add-task{
+    margin: 0px 15rem 0px 15rem;
+    width: auto;
+    height: 2rem;
+    
+}
+
+
+/* Check-Box */
+
+#checkbox{
+    margin: 0px 0px 0px -2rem;
+}
+
+/* Output  */
+#fetched-data{
+    list-style: none;
+}
+
+#i-description-date{
+    margin: -1.2rem 0px 0px 0px;
+}
+.i-Category{
+    margin: -2.3rem 1rem 2rem 92% ;
+    background-color: rgb(233, 240, 239);
+
+}
+
+
+
+
